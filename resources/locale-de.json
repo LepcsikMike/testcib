@@ -1,0 +1,54 @@
+{
+	"en": "English",
+	"de": "Deutsch",
+	"page": "CIB pdf brewer: kostenlos PDFs erstellen, bearbeiten, komprimieren und vieles mehr",
+	"menu": {
+		"Vorteile": "Vorteile",
+		"Versionen": "Versionen",
+		"Am-Beispiel": "Beispiele",
+		"Funktionen": "Funktionen",
+		"News": "News"
+	},
+
+	"header": {
+        "Titel": "Mit dem webbasierten Multifunktions-Viewer direkt im Browser allerlei Dokumente sichten und bearbeiten",
+        "Text": "Mit CIB doXiview jetzt PDF beliebig editieren, zusammenfügen, online signieren und vieles mehr!",
+        "TextPunkte1": " Nie mehr Dokumenten nachtelefonieren",
+        "TextPunkte2": " Mehr Zeit für Beratungstätigkeiten",
+        "TextPunkte3": " Im personalisierten Kanzlei-Design",
+        "TextPunkte4": " Mit individuellem Mandantenservice vom Wettbewerb abheben",
+        "TextPunkte5": " DSGVO konform für den sicheren Dokumentenaustausch"
+    },
+
+	"Button": {
+		"CTA1": "Bestellen",
+		"CTA2": "zu CIB doXiview",
+		"CTA2-gray": "Showcase",
+		"Senden": "Senden"
+	},
+	"AvailableLanguage": {
+		"Title": "CIB pdf brewer gibt es in folgenden Sprachen"
+	},
+	
+	"Footer": {
+		"HomepageLink": "https://www.cib.de/de/startseite.html",
+		"PrivacyLink": "https://www.cib.de/de/datenschutz.html",
+		"ImprintLink": "https://www.cib.de/de/impressum.html",
+		"Consultation": "Beratung und Bestellung",
+		"Installation": "Installation & Drittseiten",
+		"RelatedProducts": "Weitere CIB Lösungen",
+		"Legal": "Rechtliche Informationen",
+		"AGB": "AGB",
+		"Nutzungsbedingungen": "Nutzungsbedingungen",
+		"Widerrufserklärung": "Widerrufserklärung",
+		"Datenschutz": "Datenschutz",
+		"Impressum": "Impressum",
+        "Weblösungen": "CIB Weblösungen",
+        "WeitereLösungen": "Weitere CIB Lösungen",
+        "Unternehmen": "Unternehmen",
+        "InfoBeratung": "Info & Beratung"
+	},
+
+	"AGBs": "https://www.doxisafe.me/#/safe/retrieve/brewer3agb",
+	"InstallationGuide": "Installationsanleitung"
+}

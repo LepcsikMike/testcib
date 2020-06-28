@@ -1,0 +1,57 @@
+{
+	"en": "English",
+	"de": "Deutsch",
+	"page": "CIB pdf brewer: create, edit and compress PDF for free",
+	"menu": {
+		"Vorteile": "Advantages",
+		"Versionen": "Versions",
+		"Am-Beispiel": "Use cases",
+		"Funktionen": "Features",
+		"News": "News",
+		"Bestellen": "Order now"
+	},
+
+	"header": {
+        "Titel": "La plataforma de comunicación digital continua con sus clientes",
+        "Text": "Nie wieder Briefe ausdrucken und kuvertieren: Mit CIB fairBrieft verschicken Sie sicher einzelne Briefe, Serienbriefe oder auch Hybridpost - umweltschonend und lokal.",
+        "TextPunkte1": "Ya no tendrá que solicitar más documentos telefónicamente",
+        "TextPunkte2": "Podrá dedicar más tiempo a sus actividades de asesoramiento",
+        "TextPunkte3": "Con un diseño personalizado para su despacho",
+        "TextPunkte4": "Destaque entre su competencia gracias a una atención al cliente individualizada",
+        "TextPunkte5": "Cumple con el RGPD para un intercambio de documentos seguro"
+    },
+
+	"Button": {
+		"CTA1": "Order now",
+		"CTA2": "Go to CIB doXiview",
+		"CTA2-gray": "Showcase",
+		"Senden": "Send"
+	},
+
+	"AvailableLanguage": {
+		"Title": "CIB pdf brewer is available in the following languages"
+	},
+
+	
+	"Footer": {
+		"HomepageLink": "https://www.cib.de/en/home.html",
+		"PrivacyLink": "https://www.cib.de/en/privacy-policy.html",
+		"ImprintLink": "https://www.cib.de/en/imprint.html",
+		"Consultation": "Consultation and order",
+		"Installation": "Installation & third party sites",
+		"RelatedProducts": "Related products",
+		"Legal": "Legal information",
+		"AGB": "General terms and conditions",
+		"Nutzungsbedingungen": "End user licence agreement",
+		"Widerrufserklärung": "Cancellation policy",
+		"Datenschutz": "Privacy policy",
+		"Impressum": "Imprint",
+        "Weblösungen": "CIB web solutions",
+        "WeitereLösungen": "Other CIB solutions",
+        "Unternehmen": "Company",
+        "InfoBeratung": "Info & advice"
+	},
+
+	"AGBs": "https://www.doxisafe.me/#/safe/retrieve/cib-conditions",
+	"InstallationGuide": "Installation guide"
+}

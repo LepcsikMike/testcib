@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <title>CIB Master Template</title>
+    <!-- Required meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=E6mnk8Xjvo">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png?v=E6mnk8Xjvo">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png?v=E6mnk8Xjvo">
+    <link rel="manifest" href="img/site.webmanifest?v=E6mnk8Xjvo">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg?v=E6mnk8Xjvo" color="#e11e19">
+    <link rel="shortcut icon" href="img/favicon.ico?v=E6mnk8Xjvo">
+    <meta name="msapplication-TileColor" content="#e11e19">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <!-- Main css -->
+    <link href="css/cibstyle.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs Vue.JS-->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <script src="js/polyfills.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+    <!-- Stateful services for Vue -->
+    <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
+    <script src="https://unpkg.com/vuelidate/dist/vuelidate.min.js"></script>
+    <script src="https://unpkg.com/vuelidate/dist/validators.min.js"></script>
+    <script src="https://unpkg.com/vuelidate-error-extractor/dist/vuelidate-error-extractor.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="30" class="pr-0">
+
+    <div id="app">
+        <div v-cloak>
+
+            <!-- Nav Menu -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-menu">
+
+                <a href="index.html">
+                    <picture class="btn-pointer">
+                        <source media="(min-width: 1200px)" srcset="/img/CIB_doXiview_03.svg" height="38" width=229 class="btn-pointer" alt="logo">
+                        <source media="(max-width: 768px)" srcset="/img/Logo mobile.svg" class="btn-pointer" alt="logo">
+                        <img src="/img/Logo mobile.svg" height="38" class="btn-pointer" alt="logo">
+                    </picture>
+                </a>
+
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto pl-3">
+                        <li class="nav-item hr">
+                            <a class="nav-link pb-0" href="#">{{$t('menu.Vorteile')}}</a>
+                        </li>
+                        <li class="nav-item hr">
+                            <a class="nav-link pb-0" href="#">{{$t('menu.Versionen')}}</a>
+                        </li>
+                        <li class="nav-item hr">
+                            <a class="nav-link pb-0" href="#">{{$t('menu.Funktionen')}}</a>
+                        </li>
+
+                        <div class="navbar-collapse" id="navbar">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item center">
+                                    <a class="btn btn-CTA1" href="#Bestellen">{{$t('Button.CTA1')}}</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="material-icons pt-1">language</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="nav-link nav-link-dropdown dropdown-item btn-pointer pl-2"
+                                    v-for="language in languages"
+                                    v-on:click="currentLanguage(language)">{{$t(language)}}</a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <!-- Header -->
+            <header class="header-text-top">
+                <div class="container">
+                    <div class="shape-top"></div>
+                    <div class="shape-left"></div>
+                    <div class="row">
+                        <div class="col-lg-6 header-padding-button mt-2 order-3 order-lg-1">
+
+                            <h1 class="pb-4">{{$t('header.Titel')}}</h1>
+
+                            <h3 class="pb-4">{{$t('header.Text')}}</h3>
+                            <!-- 
+                            <table class="custom-list-header">
+                                <tbody>
+                                  <tr>
+                                    <td class="pb-3 pr-2"><span class="material-icons align-text-bottom">done</span></td>
+                                    <td class="pb-3">{{$t('header.TextPunkte1')}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="pb-3 pr-2"><span class="material-icons align-text-bottom">done</span></td>
+                                    <td class="pb-3">{{$t('header.TextPunkte2')}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="pb-3 pr-2"><span class="material-icons align-text-bottom">done</span></td>
+                                    <td class="pb-3">{{$t('header.TextPunkte3')}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="pb-3 pr-2"><span class="material-icons align-text-bottom">done</span></td>
+                                    <td class="pb-3">{{$t('header.TextPunkte4')}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="pb-3 pr-2"><span class="material-icons align-text-bottom">done</span></td>
+                                    <td class="pb-4">{{$t('header.TextPunkte5')}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>-->
+
+                              <div class="row pb-4 d-flex justify-content-left ">
+                                <div class="col-12 col-xl-4">
+                                    <a href="#" target="_blank" class="btn btn-block btn-CTA2" role="button"
+                                        aria-pressed="true">{{$t('Button.CTA2')}}</a>
+                                </div>
+                                <div class="col-12 col-xl-5 btn-head-top-padding">
+                                    <a href="#" target="_blank" class="btn btn-block btn-CTA2-gray" role="button"
+                                        aria-pressed="true">{{$t('Button.CTA2-gray')}}</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6 header-img-padding order-1 order-lg-3">
+                            <img src="images/HG_CIB_doXiview.svg" class="img-fluid" width="650">
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- New Footer -->
+            <div class="bg-color-page section-last section-mobile footer-text" id="Links">
+                <div class="container d-none d-md-block">
+                    <div class="row mb-5">
+
+                        <div class="col">
+                            <span class="footer-text-title">{{$t('Footer.Consultation')}}</span>
+                            <ul class="custom-list-footer">
+                                <li><a href="tel:+498914360111">+49 89 143 60 - 111</a></li>
+                                <li><a href="mailto:info@cib.de" class="footer-text">
+                                        info@cib.de</a></li>
+                                <!--<li><a href="https://my.cib.de/#!/" target="_blank">Reseller</a></li>-->
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <span class="footer-text-title">{{$t('Footer.Weblösungen')}}</span>
+                            <ul class="custom-list-footer">
+                                <li><a href="https://www.doxisafe.me/" target="_blank">CIB doXisafe</a></li>
+                                <li><a href="https://doxigate.cib.de/" target="_blank">CIB doXigate</a></li>
+                                <li><a href="https://doxiview.cib.de/showcase/" target="_blank">CIB doXiview</a></li>
+                            </ul>
+                            <span class="footer-text-title">{{$t('Footer.WeitereLösungen')}}</span>
+                            <ul class="custom-list-footer">
+                                <li><a href="https://pdfbrewer.cib.de/" target="_blank">CIB pdf brewer</a></li>
+                                <li><a href="https://kanzlei-app.cib.de/" target="_blank">CIB kanzlei app</a></li>
+                                <li><a href="https://fairbrieft.cib.de/" target="_blank">CIB fairBrieft</a></li>
+                                <li><a href="https://fluxkomprimator.cib.de" target="_blank">CIB
+                                        fluXkomprimator</a></li>
+                                <!-- <li><a href="https://pdftoolbox.cib.de/test">CIB pdf toolbox</a></li> -->
+                                <li><a href="https://deeper-cib.de/" target="_blank">CIB deepER</a></li>
+                                <li><a href="https://markup.cib.de/" target="_blank">CIB markUp</a></li>
+                                <li><a href="https://www.cib.de/de/produkte/cib-invoice.html" target="_blank">CIB
+                                        invoicE</a></li>
+                                <li><a href="https://fairbrieft.cib.de/" target="_blank">CIB fairBrieft</a></li>
+                                <li><a href="https://www.cib.de/de/produkte/cib-zugferd-sdk.html" target="_blank">CIB
+                                        ZUGFeRD SDK</a>
+                                </li>
+                                <li><a href="https://libreoffice.cib.de/" target="_blank">LibreOffice powered by CIB</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <span class="footer-text-title">{{$t('Footer.Unternehmen')}}</span>
+                            <ul class="custom-list-footer">
+                                <li><a href="https://www.cib.de/de/startseite.html" target="_blank">cib.de</a></li>
+                                <li><a href="https://karriere.cib.de" target="_blank">karriere.cib.de</a></li>
+                                <li><a href="https://blog.cib.de/" target="_blank">blog.cib.de</a></li>
+                                <li><a href="https://ciblabs.es" target="_blank">ciblabs.es</a></li>
+                                <li><a href="https://corona.cib.de/" target="_blank">corona.cib.de</a></li>
+                            </ul>
+                            <span class="footer-text-title mt-5">CIB Support</span>
+                            <ul class="custom-list-footer">
+                                <li>Mo-Fr 8:00 - 19:00 Uhr</li>
+                                <li><a href="tel:+498914360111">+49 89 14360 - 111</a></li>
+                                <li><a href="mailto:cibsupport@cib.de">
+                                        cibsupport@cib.de</a></li>
+                            </ul>
+                            <span class="footer-text-title mt-5">CIB Scanner-to-go</span>
+                            <ul class="custom-list-footer">
+                                <li><a href="https://doxicrate.cib.de/" target="_blank">CIB doXicrate</a></li>
+                                <li><a href="https://www.amazon.de/CIB-doXibox-einfacher-mobilen-Scannen/dp/B01G21R86O"
+                                        target="_blank">CIB doXibox</a></li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <div class="row justify-content-end">
+                                <a href="https://www.cib.de/de/startseite.html" title="cib.de" target="_blank">
+                                    <img src="img/CIB_Logo.svg" height="50px" width="auto"
+                                        class="img-fluid footer-icon-cib" alt="logo">
+                                </a></div>
+                            <div class="row mt-4 justify-content-end">
+                                <span class="social-links mr-1">
+                                    <a href="https://twitter.com/CIBsoftwareGmbH" title="Twitter" target="_blank">
+                                        <iconify-icon data-icon="mdi-twitter"></iconify-icon>
+                                    </a>
+                                </span>
+                                <span class="social-links mr-1">
+                                    <a href="https://www.youtube.com/user/CIBSoftwareGmbH" title="YouTube"
+                                        target="_blank">
+                                        <iconify-icon data-icon="mdi-youtube"></iconify-icon>
+                                    </a>
+                                </span>
+                                <span class="social-links mr-1">
+                                    <a href="https://www.linkedin.com/company/cib/" title="LinkedIn" target="_blank">
+                                        <iconify-icon data-icon="cib:linkedin-in"></iconify-icon>
+                                    </a>
+                                </span>
+                                <span class="social-links">
+                                    <a href="https://www.xing.com/companies/cibunternehmensgruppe" title="Xing" target="_blank">
+                                        <iconify-icon data-icon="cib-xing"></iconify-icon>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-color-page container d-md-none">
+                    <div class="row ml-2">
+                        <ul class="custom-list-footer footer-list-mobile">
+                            <li><a data-toggle="collapse" data-target="#beratung" href="#">
+                                    <span class="footer-text-title">{{$t('Footer.Consultation')}}</span>
+                                </a>
+                                <div class="collapse" id="beratung">
+                                    <ul class="custom-list-footer">
+                                        <li><a href="tel:+498914360111">+49 89 143 60 - 111</a></li>
+                                        <li><a href="mailto:info@cib.de" class="footer-text">
+                                                info@cib.de</a></li>
+                                        <!--<li><a href="https://my.cib.de/#!/" target="_blank">Reseller</a></li>-->
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li><a data-toggle="collapse" data-target="#komplettloesungen" href="#">
+                                    <span class="footer-text-title">{{$t('Footer.Weblösungen')}}</span>
+                                </a>
+                                <div class="collapse" id="komplettloesungen">
+                                    <ul class="custom-list-footer">
+                                        <li><a href="https://www.doxisafe.me/" target="_blank">CIB doXisafe</a></li>
+                                        <li><a href="https://doxigate.cib.de/" target="_blank">CIB doXigate</a></li>
+                                        <li><a href="https://doxiview.cib.de/showcase/" target="_blank">CIB doXiview</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#module" href="#">
+                                    <span class="footer-text-title">{{$t('Footer.WeitereLösungen')}}</span>
+                                </a>
+                                <div class="collapse" id="module">
+                                    <ul class="custom-list-footer">
+                                        <li><a href="https://pdfbrewer.cib.de/" target="_blank">CIB pdf brewer</a></li>
+                                        <li><a href="https://kanzlei-app.cib.de/" target="_blank">CIB kanzlei app</a>
+                                        </li>
+                                        <li><a href="https://fairbrieft.cib.de/" target="_blank">CIB fairBrieft</a></li>
+                                        <li><a href="https://fluxkomprimator.cib.de" target="_blank">CIB
+                                                fluXkomprimator</a></li>
+                                        <!-- <li><a href="https://pdftoolbox.cib.de/test">CIB pdf toolbox</a></li> -->
+                                        <li><a href="https://deeper-cib.de/" target="_blank">CIB deepER</a></li>
+                                        <li><a href="https://markup.cib.de/" target="_blank">CIB markUp</a></li>
+                                        <li><a href="https://www.cib.de/de/produkte/cib-invoice.html"
+                                                target="_blank">CIB
+                                                invoicE</a>
+                                        </li>
+
+                                        <li><a href="https://www.cib.de/de/produkte/cib-zugferd-sdk.html"
+                                                target="_blank">CIB
+                                                ZUGFeRD
+                                                SDK</a>
+                                        </li>
+                                        <li><a href="https://libreoffice.cib.de/" target="_blank">LibreOffice powered by
+                                                CIB</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#unternehmen" href="#">
+                                    <span class="footer-text-title">{{$t('Footer.Unternehmen')}}</span>
+                                </a>
+                                <div class="collapse" id="unternehmen">
+                                    <ul class="custom-list-footer">
+                                        <ul class="custom-list-footer">
+                                            <li><a href="https://www.cib.de/de/startseite.html"
+                                                    target="_blank">cib.de</a>
+                                            </li>
+                                            <li><a href="https://karriere.cib.de" target="_blank">karriere.cib.de</a>
+                                            </li>
+                                            <li><a href="https://blog.cib.de/" target="_blank">blog.cib.de</a></li>
+                                            <li><a href="https://ciblabs.es" target="_blank">ciblabs.es</a></li>
+                                            <li><a href="https://corona.cib.de/" target="_blank">corona.cib.de</a></li>
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#support" href="#">
+                                    <span class="footer-text-title">CIB Support</span>
+                                </a>
+                                <div class="collapse" id="support">
+                                    <ul class="custom-list-footer">
+                                        <li>Mo-Fr 8:00 - 19:00 Uhr</li>
+                                        <li><a href="tel:+498914360111">+49 89 14360 - 111</a></li>
+                                        <li><a href="mailto:cibsupport@cib.de">
+                                                cibsupport@cib.de</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#scanner" href="#">
+                                    <span class="footer-text-title">CIB Scanner-to-go</span>
+                                </a>
+                                <div class="collapse" id="scanner">
+                                    <ul class="custom-list-footer">
+                                        <li><a href="https://doxicrate.cib.de/" target="_blank">CIB doXicrate</a>
+                                        </li>
+                                        <li><a href="https://www.amazon.de/CIB-doXibox-einfacher-mobilen-Scannen/dp/B01G21R86O"
+                                                target="_blank">CIB doXibox</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row d-flex align-items-end justify-content-center mt-4 mb-5">
+                        <div class="mr-2">
+                            <a href="https://www.cib.de/de/startseite.html" title="cib.de" target="_blank">
+                                <img src="img/CIB_Logo.svg" height="50px" width="auto" class="img-fluid footer-icon-cib"
+                                    alt="logo">
+                            </a></div>
+                        <div>
+                            <span class="social-links mr-1">
+                                <a href="https://twitter.com/CIBsoftwareGmbH" title="Twitter" target="_blank">
+                                    <iconify-icon data-icon="mdi-twitter"></iconify-icon>
+                                </a>
+                            </span>
+                            <span class="social-links mr-1">
+                                <a href="https://www.youtube.com/user/CIBSoftwareGmbH" title="YouTube" target="_blank">
+                                    <iconify-icon data-icon="mdi-youtube"></iconify-icon>
+                                </a>
+                            </span>
+                            <span class="social-links mr-1">
+                                <a href="https://www.linkedin.com/company/cib/" title="LinkedIn" target="_blank">
+                                    <iconify-icon data-icon="cib:linkedin-in"></iconify-icon>
+                                </a>
+                            </span>
+                            <span class="social-links">
+                                <a href="https://www.xing.com/companies/cibunternehmensgruppe" title="Xing" target="_blank">
+                                    <iconify-icon data-icon="cib-xing"></iconify-icon>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <a id="back-to-top" href="#" class="btn btn-toTop btn-outline-toTop back-to-top" role="button"
+                data-placement="left"><span class="material-icons">publish</span></a>
+
+            <!-- Copyright -->
+            <div class="bg-color footer-copyright py-5 text-center">
+                <a :href="$t('Footer.HomepageLink')" target="_blank" class="col copyrigth-text-link px-2">cib.de</a>
+                <!--                 <a href="#" id="cookiesBtn" data-backdrop="static" data-keyboard="false"
+                    class="col copyrigth-text-link px-2">Cookies</a> -->
+                <a href="https://www.doxisafe.me/#/safe/retrieve/eagb" target="_blank"
+                    class="col copyrigth-text-link px-2">AGB</a>
+                <a :href="$t('Footer.PrivacyLink')" target="_blank"
+                    class="col copyrigth-text-link px-2">{{$t('Footer.Datenschutz')}}</a>
+                <a :href="$t('Footer.ImprintLink')" target="_blank"
+                    class="col copyrigth-text-link px-2">{{$t('Footer.Impressum')}}</a>
+                <br>
+                <br>
+                <a class="copyrigth-text">Ⓒ CIB, 2020</a>
+
+            </div>
+
+            <!-- div="app" -->
+        </div>
+    </div>
+
+
+    <!-- Custom JS -->
+    <script src="js/polyfills.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Spinner-->
+    <script>
+        function spiner(id) {
+            document.getElementById(id).style.display = "block";
+        }
+    </script>
+
+    <!-- hide send button for modalContactForm-->
+    <script>
+        function submitOff(id) {
+            document.getElementById(id).disabled = true;
+        }
+    </script>
+
+    <!-- To Top Button-->
+    <script>
+        $(document).ready(function () {
+            // Gets the video src from the data-src on each button
+            var $videoSrc;
+            $(".video-btn").click(function () {
+                $videoSrc = $(this).attr("data-src");
+                console.log("button clicked" + $videoSrc);
+            });
+
+            // when the modal is opened autoplay it
+            $("#ModalVideo").on("shown.bs.modal", function (e) {
+                console.log("modal opened" + $videoSrc);
+                // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+                $("#video").attr(
+                    "src",
+                    $videoSrc + "?amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1"
+                );
+            });
+
+            // stop playing the youtube video when I close the modal
+            $("#ModalVideo").on("hide.bs.modal", function (e) {
+                // a poor man's stop video
+                $("#video").attr("src", $videoSrc);
+            });
+
+            // document ready
+        });
+
+    </script>
+
+    <!-- To Top Button-->
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('#back-to-top').tooltip('hide');
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            //$('#back-to-top').tooltip('show');
+        });
+    </script>
+
+</body>
+
+</html>
